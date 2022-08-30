@@ -48,8 +48,8 @@ if file is not None:
     dataset = load_data(file)
     st.write(dataset[:5])
     st.write('Starting Number of Unique Clients: ', dataset[col].nunique())
-    # print length of unique clients in dataset
     
+    st.title('TF-IDF Embeddings')
     tfidf = get_tfidf_scores(dataset)
     st.write(tfidf[:5])
 
