@@ -11,7 +11,7 @@ st.title('Company Name Matching')
 
 file = st.file_uploader('Upload .xlsx', accept_multiple_files=False)
 
-@st.cache
+@st.cache_data
 def load_data(file):
     df = pd.read_excel(file, sheet_name='Top 100 +-')
     return df
@@ -21,11 +21,11 @@ def get_tfidf_scores(df):
     clients = list(df[col].dropna().unique())
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(clients)
-    X = pd.DataFrame(data=X.toarray(), columns=vectorizer.get_feature_names())
+    X = pd.DataFrame(data=X.toarray(), columns=vectorizer.get_feature_names_out())
     
     transformer = TfidfTransformer()
     d = transformer.fit_transform(X).toarray()  
-    df = pd.DataFrame(data=d, index=X.index.unique(), columns=vectorizer.get_feature_names())
+    df = pd.DataFrame(data=d, index=X.index.unique(), columns=vectorizer.get_feature_names_out())
 
     return df
 
