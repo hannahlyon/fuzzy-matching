@@ -8,4 +8,7 @@ Every month, my company recieved a dataset consisting of a list of companies and
 - TF-IDF Vectorizer
 - Streamlit
 
+###
+`streamlit run app.py`
+
 ![img](fuzzy-matching.png)
