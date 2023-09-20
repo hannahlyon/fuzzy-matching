@@ -8,3 +8,4 @@ Every month, my company recieved a dataset consisting of a list of companies and
 - TF-IDF Vectorizer
 - Streamlit
 
+!(img)[fuzzy-matching.png]
